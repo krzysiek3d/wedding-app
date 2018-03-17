@@ -1,0 +1,44 @@
+h2 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.guests {
+  padding: 0;
+  width: 450px;
+  list-style: none;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.guest {
+  position: relative;
+  display: block;
+  padding: 10px 0;
+  margin: 5px 0;
+  color: #fff;
+  background-color: #666;
+  text-decoration: none;
+  transition-duration: 0.3s;
+}
+
+.guest:hover {
+  transform: translateX(10px);
+}
+
+.badge {
+  padding: 10px;
+  background-color: #333;
+}
+
+.invite,
+.confirm {
+  float: right;
+  padding: inherit;
+  padding: 10px;
+  margin-top: -10px;
+  background-color: tomato;
+}
+
+.invited,
+.confirmed {
+  background-color: lawngreen;
+}
