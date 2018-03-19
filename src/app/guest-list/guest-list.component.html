@@ -2,11 +2,11 @@
   <h2>Lista Gości</h2>
   <ul class="guests">
     <li *ngFor="let guest of guests">
-      <a href="#" class="guest">
+      <a routerLink="/gosc/{{guest.id}}" class="guest">
         <span class="badge">{{guest.id}}</span>
         {{guest.name}} {{guest.surname}}
-        <span class="invite" [class.invited]="guest.invited === true">Zaproszony</span>
         <span class="confirm" [class.confirmed]="guest.confirmed === true">Potwierdził</span>
+        <span class="invite" [class.invited]="guest.invited === true">Zaproszony</span>
       </a>
     </li>
   </ul>

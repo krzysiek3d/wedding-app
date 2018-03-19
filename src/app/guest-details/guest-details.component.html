@@ -1,0 +1,22 @@
+<div *ngIf="guest">
+  <h2>Edytuj: {{guest.name | uppercase}} {{guest.surname | uppercase}}</h2>
+  <div class="guest">
+    <span class="badge">{{guest.id}}</span>
+    <input type="text" [(ngModel)]="guest.name">
+    <input type="text" [(ngModel)]="guest.surname">
+    <div class="confirm" [class.confirmed]="guest.confirmed === true">
+      Potwierdził:
+      <label class="switch">
+        <input type="checkbox" [(ngModel)]="guest.confirmed" [checked]="guest.confirmed">
+        <span class="slider"></span>
+      </label>
+    </div>
+    <div class="invite" [class.invited]="guest.invited === true">
+      Zaproszony:
+      <label class="switch">
+        <input type="checkbox" [(ngModel)]="guest.invited" [checked]="guest.invited">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+</div>

@@ -15,4 +15,8 @@ export class GuestService {
     return of(GUESTS);
   }
 
+  getGuest(id: number): Observable<Guest> {
+    return of(GUESTS.find(guest => guest.id === id));
+  }
+
 }
