@@ -4,6 +4,7 @@
     <span class="badge">{{guest.id}}</span>
     <input type="text" [(ngModel)]="guest.name">
     <input type="text" [(ngModel)]="guest.surname">
+    <button (click)="saveGuest(guest)">Zapisz</button>
     <div class="confirm" [class.confirmed]="guest.confirmed === true">
       Potwierdził:
       <label class="switch">

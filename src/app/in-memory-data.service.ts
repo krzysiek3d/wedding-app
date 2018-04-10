@@ -1,0 +1,15 @@
+import { InMemoryDbService } from 'angular-in-memory-web-api';
+
+export class InMemoryDataService implements InMemoryDbService {
+    createDb() {
+        const goscie = [
+            { id: 1, name: 'Adam', surname: 'Kowalski', invited: false, confirmed: false },
+            { id: 2, name: 'Gośka', surname: 'Klin', invited: false, confirmed: false },
+            { id: 3, name: 'Janusz', surname: 'Dziadek', invited: true, confirmed: false },
+            { id: 4, name: 'Justyna', surname: 'Dzik', invited: false, confirmed: false },
+            { id: 5, name: 'Andrzej', surname: 'Kuśka', invited: true, confirmed: false },
+            { id: 6, name: 'Grzegorz', surname: 'Brzęczyszczykiewicz', invited: false, confirmed: false }
+        ];
+        return { goscie };
+    }
+}

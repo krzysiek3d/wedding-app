@@ -1,5 +1,12 @@
 <div *ngIf="guests">
   <h2>Lista Gości</h2>
+    <label>Imię:
+        <input #guestName type="text">
+    </label>
+    <label>Nazwisko:
+        <input #guestSurname type="text">
+    </label>
+    <button (click)="addGuest(guestName.value, guestSurname.value); guestName.value=''; guestSurname.value=''">Dodaj</button>
   <ul class="guests">
     <li *ngFor="let guest of guests">
       <a routerLink="/gosc/{{guest.id}}" class="guest">
@@ -8,6 +15,7 @@
         <span class="confirm" [class.confirmed]="guest.confirmed === true">Potwierdził</span>
         <span class="invite" [class.invited]="guest.invited === true">Zaproszony</span>
       </a>
+      <button (click)="deleteGuest(guest)">X</button>
     </li>
   </ul>
 </div>

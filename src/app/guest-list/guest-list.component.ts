@@ -19,6 +19,19 @@ export class GuestListComponent implements OnInit {
       .subscribe(list => this.guests = list);
   }
 
+  deleteGuest(guest: Guest): void {
+    this.guests = this.guests.filter(g => g !== guest);
+    this.guestService.deleteGuest(guest).subscribe();
+  }
+
+  addGuest(name: string, surname: string): void {
+      if (!name || !surname) return;
+      this.guestService.addGuest({ name, surname } as Guest)
+          .subscribe((guest) => {
+             this.guests.push(guest);
+          });
+  }
+
   ngOnInit() {
     this.getGuests();
   }

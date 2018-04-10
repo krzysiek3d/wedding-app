@@ -27,8 +27,13 @@ export class GuestDetailsComponent implements OnInit {
       .subscribe(guest => this.guest = guest);
   }
 
+  saveGuest(guest: Guest): void {
+    this.guestService.updateGuest(guest)
+        .subscribe( () => { this.location.back(); } );
+  }
+
   ngOnInit() {
-    this.getGuest()
+    this.getGuest();
   }
 
 }
